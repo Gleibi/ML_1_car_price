@@ -1,0 +1,4 @@
+name,year,selling_price,km_driven,fuel,seller_type,transmission,owner,mileage,engine,max_power,torque,seats
+Car1,2020,0,50000,Petrol,Dealer,Manual,First Owner,20 km/l,1500 cc,100 bhp,200 Nm@1500rpm,5
+Car2,2018,0,80000,Diesel,Individual,Auto,Second Owner,15 km/l,2000 cc,120 bhp,250 Nm@1200rpm,5
+Car3,2019,0,60000,Petrol,Dealer,Manual,First Owner,18 km/l,1200 cc,80 bhp,150 Nm@1800rpm,5
