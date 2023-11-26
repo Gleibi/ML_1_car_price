@@ -37,18 +37,15 @@ df_test['max_power'] = pd.to_numeric(split_max_power[0], errors='coerce').astype
 
 cat_features_mask = (df_train.dtypes == "object").values
 
-# для вещественнозначных признаков заполним пропуски средними
 df_real_train = df_train[df_train.columns[~cat_features_mask]]
 mis_replacer = impute.SimpleImputer(strategy="mean")
 df_no_mis_real_train = pd.DataFrame(data=mis_replacer.fit_transform(df_real_train), columns=df_real_train.columns)
 
-# для категориальных - пустыми строками
 df_cat_train = df_train[df_train.columns[cat_features_mask]].fillna("")
 df_cat_train.reset_index(drop=True, inplace=True)
 
 df_no_mis_train = pd.concat([df_cat_train,df_no_mis_real_train], axis=1)
 
-# для вещественнозначных признаков заполним пропуски средними
 df_real_test = df_test[df_test.columns[~cat_features_mask]]
 mis_replacer = impute.SimpleImputer(strategy="mean")
 df_no_mis_real_test = pd.DataFrame(data=mis_replacer.fit_transform(df_real_test), columns=df_real_test.columns)
